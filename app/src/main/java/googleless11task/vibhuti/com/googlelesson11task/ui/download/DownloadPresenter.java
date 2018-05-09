@@ -41,12 +41,15 @@ public class DownloadPresenter implements DownloadContract.Presenter {
     @Override
     public void onStartDownloadclicked(Activity context,String url) {
 
+        final Thread backgroundThread = Thread.currentThread();
         BroadcastReceiver receiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
-                String action = intent.getAction();
-                if (DownloadManager.ACTION_DOWNLOAD_COMPLETE.equals(action)) {
-
+                long downloadId = intent.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID,0);
+                if (downloadId == enqueue) {
+                    synchronized (backgroundThread) {
+                        backgroundThread.notify();
+                    }
                 }
             }
         };
@@ -59,6 +62,14 @@ public class DownloadPresenter implements DownloadContract.Presenter {
             DownloadManager.Request request = new DownloadManager.Request(
                     Uri.parse(url));
             enqueue = dm.enqueue(request);
+        }
+
+        synchronized (Thread.currentThread()) {
+            try {
+                Thread.currentThread().wait();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
 
     }
