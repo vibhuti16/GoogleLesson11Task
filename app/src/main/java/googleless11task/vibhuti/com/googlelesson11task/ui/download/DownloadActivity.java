@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import googleless11task.vibhuti.com.googlelesson11task.R;
 
@@ -37,5 +38,6 @@ public class DownloadActivity extends AppCompatActivity implements DownloadContr
     @Override
     public void showNotification() {
 
+        Toast.makeText(DownloadActivity.this,"Download complete",Toast.LENGTH_LONG).show();
     }
 }

@@ -49,6 +49,7 @@ public class DownloadPresenter implements DownloadContract.Presenter {
                 if (downloadId == enqueue) {
                     synchronized (backgroundThread) {
                         backgroundThread.notify();
+                        mView.showNotification();
                     }
                 }
             }
