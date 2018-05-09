@@ -5,5 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="googleless11task.vibhuti.com.googlelesson11task.ui.download.DownloadActivity">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="https://s.iha.com/00159875806/Carvoeiro-Carvoeiro.jpeg"
+        android:id="@+id/edt_url"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Download"
+        app:layout_constraintTop_toBottomOf="@+id/edt_url"
+        android:id="@+id/btn_edt_download"/>
 
 </android.support.constraint.ConstraintLayout>
