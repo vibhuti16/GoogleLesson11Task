@@ -12,14 +12,13 @@ public class DownloadActivity extends AppCompatActivity implements DownloadContr
 
     private DownloadContract.Presenter mPresenter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_download);
 
         PresenterInjector.injectDownloadPresenter(this);
-
-        mPresenter.registerReceiver(this);
 
         final EditText edtUrl = findViewById(R.id.edt_url);
         findViewById(R.id.btn_edt_download).setOnClickListener(new View.OnClickListener() {
