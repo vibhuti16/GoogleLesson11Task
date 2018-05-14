@@ -8,7 +8,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/sign-info-icon.png"
+        android:text="http://img.bhs4.com/BE/4/BE4AA7E888E32AB67B7ACC6E4D413DA63AA51C2C_large.jpg"
         android:id="@+id/edt_url"/>
     <Button
         android:layout_width="wrap_content"

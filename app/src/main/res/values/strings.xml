@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">GoogleLesson11Task</string>
+    <string name="title_activity_show_image">ShowImageActivity</string>
 </resources>

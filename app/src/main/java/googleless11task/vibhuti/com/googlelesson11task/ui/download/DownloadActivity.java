@@ -19,6 +19,8 @@ public class DownloadActivity extends AppCompatActivity implements DownloadContr
 
         PresenterInjector.injectDownloadPresenter(this);
 
+        mPresenter.registerReceiver(this);
+
         final EditText edtUrl = findViewById(R.id.edt_url);
         findViewById(R.id.btn_edt_download).setOnClickListener(new View.OnClickListener() {
             @Override

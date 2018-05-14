@@ -23,6 +23,7 @@ public class DownloadContract {
      */
     interface Presenter extends BasePresenter {
         void onStartDownloadclicked(Activity context, String url);
+        void registerReceiver(Activity context);
 
     }
 }
